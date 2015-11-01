@@ -56,7 +56,8 @@ public class main{
             e.printStackTrace();
         }
     }
-
+    
+    /* Used to grab a BufferedReader to read / write to Server */
     public static BufferedReader getToken(String url, String token) throws IOException {
 
         BufferedReader br = null;
@@ -90,7 +91,9 @@ public class main{
         String ret = ob.getString("result");
         return ret;
     }
+    
 
+    /* Stage 1 Reverse a String GET then POST to Server */
     public static void reverse(BufferedReader buf) throws JSONException, IOException {
         JSONObject ob = new JSONObject(buf.readLine());
         String sub = ob.getString("result");
@@ -106,7 +109,9 @@ public class main{
 
         System.out.println("after post: " + buf.readLine());
     }
+    
 
+    /* Stage 2 needle in haystack GET then POST to Server */
     public static void needle(BufferedReader buf) throws IOException, JSONException {
 
         JSONObject ob = new JSONObject(buf.readLine());
@@ -129,7 +134,8 @@ public class main{
 
         System.out.println("after post: " + buf.readLine());
     }
-
+    
+    /* Stage 3 Prefix GET then POST to Server */
     public static void prefix(BufferedReader buf) throws IOException, JSONException{
 
         JSONObject ob = new JSONObject(buf.readLine());
@@ -154,6 +160,7 @@ public class main{
         System.out.println("after post: " + buf.readLine());
     }
 
+    /* Stage 4 time GET then POST to Server */
     public static void theDate(BufferedReader buf) throws IOException, JSONException{
 
         JSONObject ob = new JSONObject(buf.readLine());
